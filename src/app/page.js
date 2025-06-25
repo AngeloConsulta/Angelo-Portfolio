@@ -342,17 +342,23 @@ export default function Home() {
                   quote: "Incredible attention to detail and a passion for creating a great user experience. A pleasure to work with.",
                   avatar: '👩‍🎨'
                 },
-                {
-                  name: 'Maria Dulce M. Ciano',
-                  title: 'Co - IT Programmer',
-                  quote: "Angelo is a reliable teammate and a skilled programmer. He always brings creative solutions to the table and is a pleasure to work with.",
-                  avatar: '👩‍💻'
-                },
+                // {
+                //   name: 'Maria Dulce M. Ciano',
+                //   title: 'Co - IT Programmer',
+                //   quote: "Angelo is a reliable teammate and a skilled programmer. He always brings creative solutions to the table and is a pleasure to work with.",
+                //   avatar: '👩‍💻'
+                // },
                 {
                   name: 'Ramcel Abio',
                   title: 'Department of Agriculture - AMIA Admin',
                   quote: "Working with Angelo was a seamless experience. His expertise and dedication greatly contributed to the success of our projects.",
                   avatar: '👨‍🌾'
+                },
+                {
+                  name: 'Jowie P. Diaz',
+                  title: 'Department of Agriculture - AMIA Technical Staff',
+                  quote: "Angelo's expertise and dedication made a significant impact on our team's success. Highly recommended!",
+                  avatar: '👨‍💼'
                 }
               ].map((testimonial, index) => (
                 <motion.div
