@@ -348,12 +348,12 @@ export default function PageClient() {
                     quote: "Angelo's technical skills and commitment to quality are impressive. He delivered a robust and efficient solution that perfectly met our needs.",
                     avatar: '👨‍💻'
                   },
-                  {
-                    name: 'Joel L. Heraldo',
-                    title: 'Department of Agriculture ICT Head & Focal',
-                    quote: "The level of professionalism and technical expertise is unmatched. Highly recommend for any development needs.",
-                    avatar: '👨‍💻'
-                  },
+                  // {
+                  //   name: 'Joel L. Heraldo',
+                  //   title: 'Department of Agriculture ICT Head & Focal',
+                  //   quote: "The level of professionalism and technical expertise is unmatched. Highly recommend for any development needs.",
+                  //   avatar: '👨‍💻'
+                  // },
                   {
                     name: 'Mary Joy Señido',
                     title: 'Department of Agriculture - AMIA Admin',
