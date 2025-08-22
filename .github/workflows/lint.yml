@@ -19,9 +19,7 @@ jobs:
           node-version: 22.16.0
       - name: Install Dependencies
         run: |
-          cd my-portfolio
           npm install
       - name: Lint
-        run: |
-          cd my-portfolio
+        run: | 
           npm run lint
