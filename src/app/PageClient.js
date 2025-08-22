@@ -10,6 +10,7 @@ import { BiLogoPostgresql, BiLogoSpringBoot } from 'react-icons/bi';
 import { SiTailwindcss, SiDjango, SiMysql } from 'react-icons/si';
 import { motion } from "framer-motion";
 import Head from 'next/head';
+import Link from "next/link";
 
 const languagesAndDatabases = [
   { name: 'Python', icon: FaPython, level: 75, color: '#3776AB' },
@@ -65,13 +66,13 @@ export default function PageClient() {
                 <ThemeToggleButton />
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <a href="#home" className="hover:text-primary transition-colors">Home</a>
-                <a href="#projects" className="hover:text-primary transition-colors">Case Studies</a>
-                <a href="#about" className="hover:text-primary transition-colors">About</a>
-                <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-                <a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a>
-                <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
-                <a href="/blog" className="hover:text-primary transition-colors">Blog</a>
+                <Link href="#home" className="hover:text-primary transition-colors">Home</Link>
+                <Link href="#projects" className="hover:text-primary transition-colors">Case Studies</Link>
+                <Link href="#about" className="hover:text-primary transition-colors">About</Link>
+                <Link href="#skills" className="hover:text-primary transition-colors">Skills</Link>
+                <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
+                <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
+                <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
               </div>
               <MobileNav />
             </div>

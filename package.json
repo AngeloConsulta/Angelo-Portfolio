@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint:fix": "next lint --fix .",
     "lint": "next lint"
+
   },
   "dependencies": {
+    "eslint-config-next": "^15.5.0",
     "framer-motion": "^12.18.1",
     "gray-matter": "^4.0.3",
     "next": "15.3.4",
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "eslint": "^9.33.0",
     "tailwindcss": "^4"
   }
 }
