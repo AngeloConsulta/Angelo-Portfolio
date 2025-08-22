@@ -7,8 +7,8 @@ on:
       # - dev
 
 jobs:
-  lint-client:
-    name: Lint Client
+  lint-my-portfolio:
+    name: Lint My-Portfolio
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -19,9 +19,9 @@ jobs:
           node-version: 22.16.0
       - name: Install Dependencies
         run: |
-          cd client
+          cd my-portfolio
           npm install
       - name: Lint
         run: |
-          cd client
+          cd my-portfolio
           npm run lint
