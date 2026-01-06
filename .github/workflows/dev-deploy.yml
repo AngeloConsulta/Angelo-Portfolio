@@ -1,0 +1,31 @@
+name: Deploy Dev
+
+on:
+  push:
+    branches:
+      - dev   # this workflow only runs when pushing to dev branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.16.0
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Dev Environment
+        run: |
+          echo "🚀 Deploying dev build..."
+          # here you put your dev deployment command
+          # e.g. vercel --prod or firebase deploy --only hosting:dev
