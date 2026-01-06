@@ -1,0 +1,36 @@
+name: Release Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.16.0
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to environment
+        run: |
+          if [ "${GITHUB_REF##*/}" == "main" ]; then
+            echo "🚀 Deploying to Production..."
+            # Your production deployment command here
+          elif [ "${GITHUB_REF##*/}" == "dev" ]; then
+            echo "🚀 Deploying to Development/Staging..."
+            # Your dev deployment command here
+          fi
