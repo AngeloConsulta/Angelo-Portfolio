@@ -1,34 +1,42 @@
-services:
-  - type: web
-    name: booking-automation-n8n
-    runtime: docker
-    dockerfilePath: ./src/Dockerfile
-    dockerContext: .
-    plan: free
-    region: oregon
-    autoDeploy: false
-    envVars:
-      - key: PORT
-        value: "5678"
+# Exported from Render on 2026-09-06T13:31:05Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: booking-n8n
+      runtime: image
+      image:
+        url: docker.io/n8nio/n8n:1.121.1
+      plan: free
+      envVars:
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        sync: false
       - key: WEBHOOK_URL
         sync: false
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_HOST
+      - key: DB_POSTGRESDB_USER
         sync: false
       - key: DB_POSTGRESDB_PORT
-        value: "5432"
-      - key: DB_POSTGRESDB_DATABASE
-        value: postgres
-      - key: DB_POSTGRESDB_USER
         sync: false
       - key: DB_POSTGRESDB_PASSWORD
         sync: false
-      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
-        value: "false"
+      - key: DB_POSTGRESDB_HOST
+        sync: false
+      - key: DB_POSTGRESDB_DATABASE
+        sync: false
+      - key: N8N_PROTOCOL
+        sync: false
+      - key: DB_POSTGRESDB_SCHEMA
+        sync: false
+      - key: GENERIC_TIMEZONE
+        sync: false
+      - key: TZ
+        sync: false
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-      - key: EXECUTIONS_DATA_PRUNE
-        value: "true"
-      - key: EXECUTIONS_DATA_MAX_AGE
-        value: "168"
+        sync: false
+      - key: DB_TYPE
+        sync: false
+      region: oregon
+      autoDeployTrigger: commit
