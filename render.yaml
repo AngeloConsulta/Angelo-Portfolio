@@ -2,7 +2,7 @@ services:
   - type: web
     name: booking-automation-n8n
     runtime: docker
-    dockerfilePath: Dockerfile
+    dockerfilePath: ./src/Dockerfile
     dockerContext: .
     plan: free
     region: oregon
