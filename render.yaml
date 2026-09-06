@@ -8,8 +8,8 @@ services:
     region: oregon
     autoDeploy: false
     envVars:
-      - key: N8N_PORT
-        fromEnvVar: PORT
+      - key: PORT
+        value: "5678"
       - key: WEBHOOK_URL
         sync: false
       - key: DB_TYPE
