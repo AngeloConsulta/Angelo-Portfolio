@@ -65,8 +65,8 @@ jobs:
 
       - name: Pull Vercel Environment Information
         run: |
-          mkdir -p "$VERCEL_APP"
-          vercel pull --cwd "$VERCEL_APP" --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+          mkdir $VERCEL_APP
+          vercel pull --cwd $VERCEL_APP --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
