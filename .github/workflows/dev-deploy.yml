@@ -5,8 +5,8 @@ on:
     branches:
       - dev   # this workflow only runs when pushing to dev branch
 
-env:
-  DEPLOYMENT_PLATFORM: ${{ vars.DEPLOYMENT_PLATFORM }}
+# env:
+  # DEPLOYMENT_PLATFORM: ${{ vars.DEPLOYMENT_PLATFORM }}
 
 jobs:
   lint-portfolio:
@@ -26,7 +26,6 @@ jobs:
 
   deploy-dev-vercel:
     name: Deploy to Vercel Preview
-    if: ${{ vars.DEPLOYMENT_PLATFORM == 'vercel' }}
     needs: lint-portfolio
     runs-on: ubuntu-latest
     environment: Preview
