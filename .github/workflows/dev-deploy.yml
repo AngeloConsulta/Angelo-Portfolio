@@ -24,8 +24,16 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Dev Environment
+      - name: Install Vercel CLI
+        run: npm install --global vercel@28.16.7
+
+      - name: Pull Vercel Environment Information
         run: |
-          echo "🚀 Deploying dev build..."
-          # here you put your dev deployment command
-          # e.g. vercel --prod or firebase deploy --only hosting:dev
+          mkdir $VERCEL_APP
+          vercel pull --cwd $VERCEL_APP --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel Preview
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
