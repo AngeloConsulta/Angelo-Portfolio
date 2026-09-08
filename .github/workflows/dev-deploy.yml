@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 22.16.0
       - name: Install Dependencies and lint
-        run: 
+        run: |
           npm install
           npm run lint
 
@@ -40,15 +40,23 @@ jobs:
         with:
           node-version: 22.16.0
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
-      - name: Build project
-        run: npm run build
+      - name: Pull Vercel environment info
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Build project artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy to Vercel Preview
-        run: npx vercel --prebuilt
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
