@@ -78,7 +78,7 @@ export default function PageClient() {
                 <Link href="#skills" className="hover:text-primary transition-colors">Skills</Link>
                 <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
                 <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
-                <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+                <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>               
               </div>
               <MobileNav />
             </div>
@@ -108,6 +108,12 @@ export default function PageClient() {
                   >
                     Get In Touch
                   </a>
+                  <Link
+                    href="/booking-services"
+                    className="border border-border text-foreground px-8 py-3 rounded-full font-medium hover:bg-accent transition-colors"
+                  >
+                    Book a Discovery Call
+                  </Link>
                 </div>
               </div>
           </div>
