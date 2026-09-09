@@ -497,13 +497,13 @@ export default function BookingForm({ selectedService, onBookingSubmit }) {
                   </p>
                 </div>
                 {/* Button for the Modal */}
-                {/* <button
+                <button
                   type="button"
                   onClick={handleInitiateBooking}
                   className="w-full rounded-xl bg-primary py-3 px-4 text-center text-sm font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
                   Initiate Booking Request →
-                </button> */}
+                </button>
               </div>
             ) : (
               <button
